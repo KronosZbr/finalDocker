@@ -3,6 +3,7 @@
 ## Passo 1: Preparando o ambiente
 
 1. Tenha o Docker e o Docker Compose instalados na sua máquina.
+2. Ao decorrer do projeto certifqui-se de ter as portas que serão utilizadas disponíveis.
 
 ## Passo 2: Preparar o ambiente Docker
 
@@ -45,9 +46,9 @@
 ### 4.2 Instalar o Plugin Redis Object Cache
 
 1. No painel de administração do WordPress, vá para `Plugins > Adicionar Novo`.
-2. Na barra de busca, digite "Redis Object Cache".
+2. Na barra de busca, digite  `Redis Object Cache`(caso de falha na instalção tente novamente).
 3. Encontre o plugin "Redis Object Cache" (desenvolvido por Till Krüss) e clique em `Instalar Agora`.
-4. Após a instalação, clique em `Ativar`.
+4. Após a instalação, clique em ativar e siga as instruções do passo 4.3.
 
 ### 4.3 Editar o Arquivo `wp-config.php`
 
@@ -82,13 +83,14 @@
     define('WP_REDIS_PORT', 6379);
     ```
 
-5. Salve e feche o arquivo:
+6. Salve e feche o arquivo:
    Pressione `CTRL+X`, depois `Y` e `ENTER` para salvar e sair.
+   Depois de um `exit` no prompt do WSl.
 
 ### 4.4 Verificar a Configuração do Redis
 
 1. No painel de administração do WordPress, vá para `Configurações > Redis`.
-2. Na página de configurações do Redis, clique em `Enable Object Cache` (Ativar Cache de Objetos).
+2. Na página de configurações do Redis, clique em `Ativar Cache de Objetos`.
 3. Verifique se o status está como conectado, isso indica que o Redis está conectado e funcionando.
 
 ## Passo 5: Verificar a Conexão do WordPress com o MySQL
@@ -97,22 +99,16 @@
 
 Se você conseguiu completar a instalação inicial do WordPress e acessar o painel de administração, a conexão com o MySQL está funcionando corretamente.
 
-### 5.2 Verificar o Status do Banco de Dados no WordPress
+### 5.2 Usar um Plugin de Administração de Banco de Dados
 
-1. Faça login no painel de administração do WordPress.
-2. Instale e ative um plugin como o **Diagnóstico e resolução de problemas**.
-3. Vá para `Ferramentas > Diagnóstico`.
-4. Verifique se há algum erro relacionado ao banco de dados na seção `Status`.
-
-### 5.3 Usar um Plugin de Administração de Banco de Dados
-
-1. No painel de administração do WordPress, vá para `Plugins > Adicionar Novo`.
-2. Pesquise por "WP phpMyAdmin" e instale o plugin.
+1. No painel de administração do WordPress, vá para `Plugins > Adicionar Plugin`.
+2. Pesquise por `WP phpMyAdmin` e instale o plugin (caso de falha na instalção tente novamente).
 3. Ative o plugin e vá para `Ferramentas > WP phpMyAdmin`.
-4. Clique no botão `Enter local phpMyAdmin`.
-5. Verifique se você consegue acessar e visualizar as tabelas do banco de dados.
+4. Desmarque a opção `Restrict access only to current IP ` e clique em `salvar as alterações`.
+5. Clique no botão `Enter local phpMyAdmin`.
+6. Verifique se você consegue acessar e visualizar as tabelas do banco de dados.
 
-### 5.4 Testar a Conexão Diretamente no Contêiner do WordPress
+### 5.3 Testar a Conexão Diretamente no Contêiner do WordPress
 
 1. Acesse o contêiner do WordPress:
     ```bash
@@ -136,8 +132,10 @@ Se você conseguiu completar a instalação inicial do WordPress e acessar o pai
     ```
 
     Se você ver uma lista de tabelas, a conexão está funcionando corretamente.
+    Depois de um `exit` no prompt do WSl. para fechar o banco de dados.
+    E mais um para sair do bash.
 
-### 5.5 Verificar Logs de Erros
+### 5.4 Verificar Logs de Erros
 
 1. Verifique os logs do contêiner do WordPress:
     ```bash
@@ -150,4 +148,19 @@ Se você conseguiu completar a instalação inicial do WordPress e acessar o pai
 
 ### 6.1 Acessar o Prometheus
 
-1. Abra o navegador e acesse `http://localhost:9090` para verificar o Prometheus e suas métricas.
+1. Abra o navegador e acesse `http://localhost:9090` para verificar o Prometheus métricas.
+
+### 6.2 Consultar metricas do MYSQL
+Para utilizar os comandos os escreva na `Expression` e após isso presione `Execute` para ver as metricas, aqui estão alguns exemplos:
+1. `mysql_global_variables_metadata_locks_cache_size`
+2. `mysql_global_status_bytes_sent`
+3. `mysql_global_status_connections`
+
+### 6.2 Consultar metricas do Redis
+Para utilizar os comandos os escreva na `Expression` e após isso presione `Execute` para ver as metricas, aqui estão alguns exemplos:
+1. `redis_allocator_resident_bytes`
+2. `redis_commands_duration_seconds_total`
+3. `redis_aof_last_write_status`
+
+### 6.3 Visualizar os targets aplicados
+Para visualizar os targets selecione no `status` (canto superior esquerdo) e selecione o campo `Targets`.
