@@ -46,10 +46,30 @@ services:
     networks:
       - wordpress_network
 
+  redis_exporter:
+    image: oliver006/redis_exporter:latest
+    environment:
+      REDIS_ADDR: redis:6379
+    ports:
+      - "9121:9121"
+    networks:
+      - wordpress_network
+
+  mysql-exporter:
+    image: prom/mysqld-exporter
+    command:
+      - --config.my-cnf=/cfg/.my.cnf
+      - --mysqld.address=db:3306
+    volumes:
+      - "./.my.cnf:/cfg/.my.cnf"
+    ports:
+      - "9104:9104"
+    networks:
+      - wordpress_network
+
 volumes:
   wordpress_data:
   db_data:
 
 networks:
   wordpress_network:
-
