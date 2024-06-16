@@ -151,7 +151,3 @@ Se você conseguiu completar a instalação inicial do WordPress e acessar o pai
 ### 6.1 Acessar o Prometheus
 
 1. Abra o navegador e acesse `http://localhost:9090` para verificar o Prometheus e suas métricas.
-
-## Conclusão
-
-Este guia detalha os passos necessários para configurar um ambiente Docker para WordPress com MySQL, Redis e Prometheus. Siga cuidadosamente cada etapa para garantir uma instalação e configuração bem-sucedidas.
