@@ -12,4 +12,4 @@ scrape_configs:
       - targets: ['mysql-exporter:9104']  
   - job_name: 'redis'
     static_configs:
-      - targets: ['redis-exporter:9121'] 
+      - targets: ['redis_exporter:9121'] 
