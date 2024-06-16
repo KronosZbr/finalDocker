@@ -1,4 +1,4 @@
-# Guia de Configuração do Ambiente Docker para WordPress com MySQL, Redis e Prometheus
+# Turorial
 
 ## Passo 1: Preparando o ambiente
 
@@ -10,11 +10,11 @@
 
 1. Crie um diretório para o seu projeto e navegue até ele:
    ```bash
-   mkdir meu_projeto_wordpress
-   cd meu_projeto_wordpress
+   mkdir projdocker
+   cd projdocker
    ```
 
-### 2.2 Clonar o Projeto
+### 2.2 Clone o Projeto
 
 1. Clone o projeto dentro do diretório criado anteriormente:
    ```bash
@@ -62,13 +62,18 @@
     ```bash
     cd /var/www/html
     ```
+3. Instale o editor de código nano:
+    ```bash
+    apt-get update
+    apt-get install nano
+    ```
 
-3. Edite o arquivo `wp-config.php` usando um editor de texto, como `nano` ou `vim`:
+4. Edite o arquivo `wp-config.php` usando um editor de texto, como `nano`:
     ```bash
     nano wp-config.php
     ```
 
-4. Adicione as seguintes linhas ao arquivo, logo acima da linha que diz `/* That's all, stop editing! Happy publishing. */`:
+5. Adicione as seguintes linhas ao arquivo, logo acima da linha que diz `/* That's all, stop editing! Happy publishing. */`:
 
     ```php
     // Enable Redis Object Cache
@@ -78,14 +83,13 @@
     ```
 
 5. Salve e feche o arquivo:
-    - Se estiver usando `nano`, pressione `CTRL+X`, depois `Y` e `ENTER` para salvar e sair.
-    - Se estiver usando `vim`, pressione `ESC`, digite `:wq` e pressione `ENTER`.
+   Pressione `CTRL+X`, depois `Y` e `ENTER` para salvar e sair.
 
 ### 4.4 Verificar a Configuração do Redis
 
 1. No painel de administração do WordPress, vá para `Configurações > Redis`.
 2. Na página de configurações do Redis, clique em `Enable Object Cache` (Ativar Cache de Objetos).
-3. Verifique se o status indica que o Redis está conectado e funcionando.
+3. Verifique se o status está como conectado, isso indica que o Redis está conectado e funcionando.
 
 ## Passo 5: Verificar a Conexão do WordPress com o MySQL
 
@@ -96,8 +100,8 @@ Se você conseguiu completar a instalação inicial do WordPress e acessar o pai
 ### 5.2 Verificar o Status do Banco de Dados no WordPress
 
 1. Faça login no painel de administração do WordPress.
-2. Instale e ative um plugin como o **Health Check & Troubleshooting**.
-3. Vá para `Ferramentas > Site Health` (Saúde do Site).
+2. Instale e ative um plugin como o **Diagnóstico e resolução de problemas**.
+3. Vá para `Ferramentas > Diagnóstico`.
 4. Verifique se há algum erro relacionado ao banco de dados na seção `Status`.
 
 ### 5.3 Usar um Plugin de Administração de Banco de Dados
@@ -105,7 +109,8 @@ Se você conseguiu completar a instalação inicial do WordPress e acessar o pai
 1. No painel de administração do WordPress, vá para `Plugins > Adicionar Novo`.
 2. Pesquise por "WP phpMyAdmin" e instale o plugin.
 3. Ative o plugin e vá para `Ferramentas > WP phpMyAdmin`.
-4. Verifique se você consegue acessar e visualizar as tabelas do banco de dados.
+4. Clique no botão `Enter local phpMyAdmin`.
+5. Verifique se você consegue acessar e visualizar as tabelas do banco de dados.
 
 ### 5.4 Testar a Conexão Diretamente no Contêiner do WordPress
 
