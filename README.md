@@ -2,7 +2,7 @@
 
 ## Passo 1: Preparando o ambiente
 
-1. Certifique-se de ter o Docker e o Docker Compose instalados na sua máquina.
+1. Tenha o Docker e o Docker Compose instalados na sua máquina.
 
 ## Passo 2: Preparar o ambiente Docker
 
