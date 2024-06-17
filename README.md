@@ -135,14 +135,6 @@ Se você conseguiu completar a instalação inicial do WordPress e acessar o pai
     Depois de um `exit` no prompt do WSl. para fechar o banco de dados.
     E mais um para sair do bash.
 
-### 5.4 Verificar Logs de Erros
-
-1. Verifique os logs do contêiner do WordPress:
-    ```bash
-    docker-compose logs wordpress
-    ```
-
-    Procure por mensagens de erro relacionadas ao banco de dados.
 
 ## Passo 6: Verificar o Prometheus
 
