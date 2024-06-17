@@ -67,6 +67,33 @@ services:
     networks:
       - wordpress_network
 
+  node-exporter:
+    image: prom/node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.ignored-mount-points=^/host/proc,/host/sys,/etc'
+    ports:
+      - "9100:9100"
+    networks:
+      - wordpress_network
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /mnt/docker-data:/var/lib/docker:ro
+    ports:
+      - "8080:8080"
+    networks:
+      - wordpress_network
+
 volumes:
   wordpress_data:
   db_data:
