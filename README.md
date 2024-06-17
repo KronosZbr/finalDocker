@@ -149,11 +149,23 @@ Para utilizar os comandos os escreva na `Expression` e após isso presione `Exec
 2. `mysql_global_status_bytes_sent`
 3. `mysql_global_status_connections`
 
-### 6.2 Consultar metricas do Redis
+### 6.3 Consultar metricas do Redis
 Para utilizar os comandos os escreva na `Expression` e após isso presione `Execute` para ver as metricas, aqui estão alguns exemplos:
 1. `redis_allocator_resident_bytes`
 2. `redis_commands_duration_seconds_total`
 3. `redis_aof_last_write_status`
+   
+### 6.4 Consultar metricas do Node
+Para utilizar os comandos os escreva na `Expression` e após isso presione `Execute` para ver as metricas, aqui estão alguns exemplos:
+1. `node_memory_MemAvailable_bytes`
+2. `node_hwmon_temp_celsius`
+3. `node_procs_running`
 
-### 6.3 Visualizar os targets aplicados
+### 6.5 Visualizar os targets aplicados
 Para visualizar os targets selecione no `status` (canto superior esquerdo) e selecione o campo `Targets`.
+
+## Passo 7: Verificar o cadivisor
+Para visualizar algumas métricas do container com o cadvisor abra uma nova janela no navegador `http://localhost:8080`.
+Você também pode consultar métricas com o cadvisor pelo prometheus.
+
+Fim! :)
