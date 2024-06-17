@@ -42,6 +42,7 @@
 ### 4.1 Acessar o WordPress
 
 1. Abra o navegador e acesse `http://localhost:8000` para completar a configuração do WordPress. Siga as instruções na tela para configurar o seu site WordPress.
+2. Favor fazer a instalação na língua português (Brasileiro).
 
 ### 4.2 Instalar o Plugin Redis Object Cache
 
