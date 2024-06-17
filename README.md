@@ -19,14 +19,14 @@
 
 1. Clone o projeto dentro do diretório criado anteriormente:
    ```bash
-   git clone "endereco do repositorio"
+   git clone https://github.com/KronosZbr/finalDocker.git
    ```
 
 ## Passo 3: Iniciar o projeto
 
 1. Acesse o diretório do projeto que foi clonado:
    ```bash
-   cd "diretorio clonado"
+   cd finalDocker 
    ```
 2. Após acessar o diretório, inicie os containers e aguarde o fim do processo:
    ```bash
@@ -46,8 +46,8 @@
 ### 4.2 Instalar o Plugin Redis Object Cache
 
 1. No painel de administração do WordPress, vá para `Plugins > Adicionar Novo`.
-2. Na barra de busca, digite  `Redis Object Cache`(caso de falha na instalção tente novamente).
-3. Encontre o plugin "Redis Object Cache" (desenvolvido por Till Krüss) e clique em `Instalar Agora`.
+2. Na barra de busca, digite  `Redis Object Cache`(caso de falha na instalação tente novamente).
+3. Encontre o plugin "Redis Object Cache" (desenvolvido por Till Krüss) e clique em `Instalar Agora`(caso de falha na instalação tente novamente).
 4. Após a instalação, clique em ativar e siga as instruções do passo 4.3.
 
 ### 4.3 Editar o Arquivo `wp-config.php`
@@ -102,7 +102,7 @@ Se você conseguiu completar a instalação inicial do WordPress e acessar o pai
 ### 5.2 Usar um Plugin de Administração de Banco de Dados
 
 1. No painel de administração do WordPress, vá para `Plugins > Adicionar Plugin`.
-2. Pesquise por `WP phpMyAdmin` e instale o plugin (caso de falha na instalção tente novamente).
+2. Pesquise por `WP phpMyAdmin` e instale o plugin (caso de falha na instalação tente novamente).
 3. Ative o plugin e vá para `Ferramentas > WP phpMyAdmin`.
 4. Desmarque a opção `Restrict access only to current IP ` e clique em `salvar as alterações`.
 5. Clique no botão `Enter local phpMyAdmin`.
