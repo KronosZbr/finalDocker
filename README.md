@@ -47,9 +47,9 @@
 ### 4.2 Instalar o Plugin Redis Object Cache
 
 1. No painel de administração do WordPress, vá para `Plugins > Adicionar Novo`.
-2. Na barra de busca, digite  `Redis Object Cache`(caso de falha na instalação tente novamente).
+2. Na barra de busca, digite  `Redis Object Cache`.
 3. Encontre o plugin "Redis Object Cache" (desenvolvido por Till Krüss) e clique em `Instalar Agora`(caso de falha na instalação tente novamente).
-4. Após a instalação, clique em ativar e siga as instruções do passo 4.3.
+4. Após a instalação, clique em ativar.
 
 ### 4.3 Editar o Arquivo `wp-config.php`
 
