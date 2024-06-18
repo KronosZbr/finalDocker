@@ -168,4 +168,7 @@ Para visualizar os targets selecione no `status` (canto superior esquerdo) e sel
 Para visualizar algumas métricas do container com o cadvisor abra uma nova janela no navegador `http://localhost:8080`.
 Você também pode consultar métricas com o cadvisor pelo prometheus.
 
+
+Desenvolvido por João Vitor Dysarz 
+
 Fim! :)
